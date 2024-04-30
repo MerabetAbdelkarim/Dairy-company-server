@@ -1,15 +1,15 @@
 {
     "version": 2,
-    "functions": {
-        "api/server": {
-            "runtime": "nodejs14.x",
-            "maxDuration": 30
+    "builds": [
+        {
+            "src": "./server.js",
+            "use": "@versel/node"
         }
-    },
+    ],
     "routes": [
         {
-            "src": "/api/(.*)",
-            "dest": "/api/server.js"
+            "src": "/(.*)",
+            "dest": "/"
         }
     ]
 }
